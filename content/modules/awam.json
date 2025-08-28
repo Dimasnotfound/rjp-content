@@ -1,9 +1,16 @@
 [
   {
+    "id": "awam-teori",
+    "audience": "awam",
+    "title": "Teori BHD untuk Masyarakat",
+    "description": "Definisi, tujuan/waktu dilakukan, siapa yang melakukan, dan kapan dihentikan.",
+    "estimatedTimeMin": 6
+  },
+  {
     "id": "awam-basic",
     "audience": "awam",
     "title": "Panduan RJP untuk Masyarakat (Hands-only)",
-    "description": "Langkah RJP dasar untuk penolong awam: cek respon, panggil bantuan, cek napas, kompresi hands-only, AED bila tersedia.",
+    "description": "Langkah praktik: cek respon, panggil bantuan, cek napas, kompresi, AED.",
     "estimatedTimeMin": 10
   }
 ]

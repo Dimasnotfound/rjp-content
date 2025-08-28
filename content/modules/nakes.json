@@ -1,9 +1,16 @@
 [
   {
+    "id": "nakes-teori",
+    "audience": "nakes",
+    "title": "Teori BHD untuk Tenaga Kesehatan",
+    "description": "Definisi/tujuan, indikasi, prinsip utama (HQ-CPR, CAB, rasio), dan peran AED.",
+    "estimatedTimeMin": 8
+  },
+  {
     "id": "nakes-basic",
     "audience": "nakes",
     "title": "Panduan RJP untuk Tenaga Kesehatan",
-    "description": "Alur NAKES: cek nadi & napas ≤10 detik, ventilasi, CPR 30:2, AED/defibrilasi, siklus 2 menit, evaluasi ROSC.",
+    "description": "Cek nadi & napas, ventilasi, CPR 30:2, AED/defib, siklus 2 menit, ROSC.",
     "estimatedTimeMin": 12
   }
 ]

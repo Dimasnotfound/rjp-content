@@ -158,5 +158,51 @@
     "title": "Selesai",
     "body": "Pantau korban sampai bantuan medis mengambil alih.",
     "next": null
+  },
+
+  {
+    "id": "awt-start",
+    "moduleId": "awam-teori",
+    "order": 1,
+    "type": "action",
+    "title": "Definisi BHD",
+    "body": "Bantuan Hidup Dasar (BHD) adalah tindakan awal untuk korban henti jantung/napas agar sirkulasi & oksigenasi vital tetap terjaga sampai bantuan lanjutan datang.",
+    "next": "awt-waktu-dilakukan"
+  },
+  {
+    "id": "awt-waktu-dilakukan",
+    "moduleId": "awam-teori",
+    "order": 2,
+    "type": "action",
+    "title": "Waktu Dilakukan",
+    "body": "BHD dilakukan segera (6–10 menit pertama) saat henti napas/jantung atau kondisi gawat darurat yang mengancam nyawa (kehilangan kesadaran, dsb).",
+    "next": "awt-pelaku"
+  },
+  {
+    "id": "awt-pelaku",
+    "moduleId": "awam-teori",
+    "order": 3,
+    "type": "action",
+    "title": "Siapa yang Melakukan",
+    "body": "BHD dapat dilakukan oleh masyarakat terlatih maupun petugas medis. Pelatihan meningkatkan keselamatan dan efektivitas tindakan.",
+    "next": "awt-waktu-dihentikan"
+  },
+  {
+    "id": "awt-waktu-dihentikan",
+    "moduleId": "awam-teori",
+    "order": 4,
+    "type": "action",
+    "title": "Kapan Dihentikan",
+    "body": "BHD dihentikan jika: bantuan medis datang; korban mulai sadar/bernapas normal; penolong kelelahan dan tidak dapat melanjutkan.",
+    "next": "awt-end"
+  },
+  {
+    "id": "awt-end",
+    "moduleId": "awam-teori",
+    "order": 99,
+    "type": "action",
+    "title": "Selesai (Teori)",
+    "body": "Anda telah mempelajari teori dasar BHD. Lanjutkan ke ‘Praktik’ untuk simulasi langkah bercabang.",
+    "next": null
   }
 ]
