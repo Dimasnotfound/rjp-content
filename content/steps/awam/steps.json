@@ -1,0 +1,162 @@
+[
+  {
+    "id": "aw-start",
+    "moduleId": "awam-basic",
+    "order": 1,
+    "type": "decision",
+    "title": "Apakah korban merespon?",
+    "body": "Panggil dengan keras dan tepuk bahunya.",
+    "branch": {
+      "type": "response",
+      "options": [
+        { "value": "responsive", "label": "Respon", "next": "aw-monitor" },
+        { "value": "no_response", "label": "Tidak respon", "next": "aw-call-help" }
+      ]
+    }
+  },
+  {
+    "id": "aw-monitor",
+    "moduleId": "awam-basic",
+    "order": 2,
+    "type": "action",
+    "title": "Monitor & evaluasi",
+    "body": "Tetap pantau kondisi. Jika memburuk atau tidak bernapas normal, lanjutkan ke langkah RJP.",
+    "next": "aw-call-help"
+  },
+  {
+    "id": "aw-call-help",
+    "moduleId": "awam-basic",
+    "order": 3,
+    "type": "action",
+    "title": "Panggil bantuan 112/119 & minta AED",
+    "body": "Minta orang lain hubungi layanan darurat (112/119) dan ambilkan AED bila tersedia.",
+    "next": "aw-check-breath",
+    "tutorial": { "type": "youtube", "id": "YTAWAM01" }
+  },
+  {
+    "id": "aw-check-breath",
+    "moduleId": "awam-basic",
+    "order": 4,
+    "type": "decision",
+    "title": "Apakah korban bernapas normal?",
+    "body": "Periksa naik-turun dada selama 10 detik.",
+    "branch": {
+      "type": "breathing",
+      "options": [
+        { "value": "normal", "label": "Bernapas normal", "next": "aw-recovery" },
+        { "value": "abnormal_or_none", "label": "Tidak/napas tidak normal", "next": "aw-compression" }
+      ]
+    }
+  },
+  {
+    "id": "aw-recovery",
+    "moduleId": "awam-basic",
+    "order": 5,
+    "type": "action",
+    "title": "Posisi pemulihan (recovery)",
+    "body": "Jika aman dan bernapas normal, posisikan miring. Pantau kondisi sampai bantuan tiba.",
+    "next": "aw-end",
+    "tutorial": { "type": "youtube", "id": "YTAWAM02" }
+  },
+  {
+    "id": "aw-compression",
+    "moduleId": "awam-basic",
+    "order": 6,
+    "type": "action",
+    "title": "Mulai kompresi dada (hands-only)",
+    "body": "Tekan tengah dada kuat dan cepat 100-120/menit, kedalaman 5-6 cm. Biarkan dada kembali mengembang.",
+    "next": "aw-aed-available",
+    "tutorial": { "type": "youtube", "id": "YTAWAM03" }
+  },
+  {
+    "id": "aw-aed-available",
+    "moduleId": "awam-basic",
+    "order": 7,
+    "type": "decision",
+    "title": "Apakah AED tersedia?",
+    "body": "Jika ada, segera ambil dan nyalakan.",
+    "branch": {
+      "type": "aed_available",
+      "options": [
+        { "value": "yes", "label": "Ada AED", "next": "aw-attach-aed" },
+        { "value": "no", "label": "Tidak ada", "next": "aw-continue-2min" }
+      ]
+    }
+  },
+  {
+    "id": "aw-attach-aed",
+    "moduleId": "awam-basic",
+    "order": 8,
+    "type": "action",
+    "title": "Pasang AED dan ikuti instruksi",
+    "body": "Nyalakan AED, pasang pad sesuai gambar, ikuti perintah suara.",
+    "next": "aw-shock-decision",
+    "tutorial": { "type": "youtube", "id": "YTAWAM04" }
+  },
+  {
+    "id": "aw-shock-decision",
+    "moduleId": "awam-basic",
+    "order": 9,
+    "type": "decision",
+    "title": "Apakah AED menyarankan kejut?",
+    "body": "Pastikan semua menjauh saat analisa dan kejut.",
+    "branch": {
+      "type": "aed_advice",
+      "options": [
+        { "value": "shock_advised", "label": "Kejut disarankan", "next": "aw-deliver-shock" },
+        { "value": "no_shock", "label": "Tidak disarankan", "next": "aw-continue-2min" }
+      ]
+    }
+  },
+  {
+    "id": "aw-deliver-shock",
+    "moduleId": "awam-basic",
+    "order": 10,
+    "type": "action",
+    "title": "Berikan kejut",
+    "body": "Jauhkan semua dari korban. Tekan tombol kejut saat diminta.",
+    "next": "aw-continue-2min"
+  },
+  {
+    "id": "aw-continue-2min",
+    "moduleId": "awam-basic",
+    "order": 11,
+    "type": "action",
+    "title": "Lanjut kompresi 2 menit",
+    "body": "Lanjutkan kompresi kuat & cepat selama 2 menit. Ganti penolong jika lelah.",
+    "next": "aw-rosc-check"
+  },
+  {
+    "id": "aw-rosc-check",
+    "moduleId": "awam-basic",
+    "order": 12,
+    "type": "decision",
+    "title": "Apakah ada tanda ROSC?",
+    "body": "Cek gerakan, batuk, atau napas normal.",
+    "branch": {
+      "type": "rosc",
+      "options": [
+        { "value": "yes", "label": "Ada ROSC", "next": "aw-recovery" },
+        { "value": "no", "label": "Belum ada", "next": "aw-next-cycle" }
+      ]
+    }
+  },
+  {
+    "id": "aw-next-cycle",
+    "moduleId": "awam-basic",
+    "order": 13,
+    "type": "action",
+    "title": "Ulangi siklus",
+    "body": "Jika menggunakan AED, biarkan AED analisa ulang lalu lanjut CPR 2 menit. Ulangi sampai bantuan tiba.",
+    "next": "aw-continue-2min"
+  },
+  {
+    "id": "aw-end",
+    "moduleId": "awam-basic",
+    "order": 99,
+    "type": "action",
+    "title": "Selesai",
+    "body": "Pantau korban sampai bantuan medis mengambil alih.",
+    "next": null
+  }
+]

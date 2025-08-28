@@ -1,0 +1,171 @@
+[
+  {
+    "id": "nk-start",
+    "moduleId": "nakes-basic",
+    "order": 1,
+    "type": "decision",
+    "title": "Respons & keamanan",
+    "body": "Pastikan lokasi aman, cek respon.",
+    "branch": {
+      "type": "response",
+      "options": [
+        { "value": "responsive", "label": "Respon", "next": "nk-monitor" },
+        { "value": "no_response", "label": "Tidak respon", "next": "nk-call-help" }
+      ]
+    }
+  },
+  {
+    "id": "nk-monitor",
+    "moduleId": "nakes-basic",
+    "order": 2,
+    "type": "action",
+    "title": "Monitor",
+    "body": "Monitor kondisi, siapkan alat. Bila memburuk, lanjut alur RJP.",
+    "next": "nk-call-help"
+  },
+  {
+    "id": "nk-call-help",
+    "moduleId": "nakes-basic",
+    "order": 3,
+    "type": "action",
+    "title": "Aktifkan bantuan & minta AED",
+    "body": "Aktifkan tim resusitasi, minta AED/monitor defib, siapkan oksigen & alat ventilasi.",
+    "next": "nk-check-pulse-breath",
+    "tutorial": { "type": "youtube", "id": "YTNKS01" }
+  },
+  {
+    "id": "nk-check-pulse-breath",
+    "moduleId": "nakes-basic",
+    "order": 4,
+    "type": "decision",
+    "title": "Cek napas & nadi (≤10 detik)",
+    "body": "Cek simultan napas dan nadi karotis/brachialis selama ≤10 detik.",
+    "branch": {
+      "type": "breath_pulse",
+      "options": [
+        { "value": "no_breath_no_pulse", "label": "Tidak bernapas & tidak ada nadi", "next": "nk-start-cpr" },
+        { "value": "no_breath_has_pulse", "label": "Tidak bernapas, ada nadi", "next": "nk-rescue-breaths" },
+        { "value": "normal_breath_has_pulse", "label": "Bernapas normal, ada nadi", "next": "nk-recovery" }
+      ]
+    }
+  },
+  {
+    "id": "nk-rescue-breaths",
+    "moduleId": "nakes-basic",
+    "order": 5,
+    "type": "action",
+    "title": "Ventilasi bantu",
+    "body": "Beri napas bantu 1 kali tiap 6 detik (≈10/menit). Re-assess nadi setiap 2 menit.",
+    "next": "nk-reassess-pulse",
+    "tutorial": { "type": "youtube", "id": "YTNKS02" }
+  },
+  {
+    "id": "nk-reassess-pulse",
+    "moduleId": "nakes-basic",
+    "order": 6,
+    "type": "decision",
+    "title": "Re-assess nadi",
+    "body": "Periksa nadi. Jika hilang, mulai CPR.",
+    "branch": {
+      "type": "pulse_reassess",
+      "options": [
+        { "value": "no_pulse", "label": "Tidak ada nadi", "next": "nk-start-cpr" },
+        { "value": "has_pulse", "label": "Ada nadi", "next": "nk-rescue-breaths" }
+      ]
+    }
+  },
+  {
+    "id": "nk-start-cpr",
+    "moduleId": "nakes-basic",
+    "order": 7,
+    "type": "action",
+    "title": "Mulai CPR 30:2",
+    "body": "Kompresi 100-120/menit, kedalaman 5-6 cm, rasio 30:2. Ventilasi dengan barrier/Bag-Valve-Mask.",
+    "next": "nk-aed-attach",
+    "tutorial": { "type": "youtube", "id": "YTNKS03" }
+  },
+  {
+    "id": "nk-aed-attach",
+    "moduleId": "nakes-basic",
+    "order": 8,
+    "type": "action",
+    "title": "Pasang AED/monitor defibrilator",
+    "body": "Analisa ritme secepat mungkin, ikuti protokol.",
+    "next": "nk-shock-decision"
+  },
+  {
+    "id": "nk-shock-decision",
+    "moduleId": "nakes-basic",
+    "order": 9,
+    "type": "decision",
+    "title": "Ritme kejut?",
+    "body": "Jika ritme dapat dikejut, berikan defibrilasi.",
+    "branch": {
+      "type": "shockable",
+      "options": [
+        { "value": "shockable", "label": "Kejut", "next": "nk-deliver-shock" },
+        { "value": "non_shockable", "label": "Tidak kejut", "next": "nk-continue-2min" }
+      ]
+    }
+  },
+  {
+    "id": "nk-deliver-shock",
+    "moduleId": "nakes-basic",
+    "order": 10,
+    "type": "action",
+    "title": "Defibrilasi",
+    "body": "Pastikan clear. Berikan kejut sesuai energi perangkat.",
+    "next": "nk-continue-2min"
+  },
+  {
+    "id": "nk-continue-2min",
+    "moduleId": "nakes-basic",
+    "order": 11,
+    "type": "action",
+    "title": "CPR 2 menit",
+    "body": "Lanjutkan CPR selama 2 menit. Ganti pemberi kompresi untuk kualitas.",
+    "next": "nk-rosc-check"
+  },
+  {
+    "id": "nk-rosc-check",
+    "moduleId": "nakes-basic",
+    "order": 12,
+    "type": "decision",
+    "title": "Evaluasi ROSC",
+    "body": "Cek tanda kehidupan, napas spontan, tekanan darah membaik.",
+    "branch": {
+      "type": "rosc",
+      "options": [
+        { "value": "yes", "label": "Ada ROSC", "next": "nk-post-rosc" },
+        { "value": "no", "label": "Belum ada", "next": "nk-reanalyse" }
+      ]
+    }
+  },
+  {
+    "id": "nk-reanalyse",
+    "moduleId": "nakes-basic",
+    "order": 13,
+    "type": "action",
+    "title": "Analisa ulang ritme",
+    "body": "Analisa ritme/AED, lanjut siklus 2 menit sesuai hasil.",
+    "next": "nk-continue-2min"
+  },
+  {
+    "id": "nk-post-rosc",
+    "moduleId": "nakes-basic",
+    "order": 14,
+    "type": "action",
+    "title": "Perawatan pasca-ROSC",
+    "body": "Stabilisasi jalan napas, oksigenasi, sirkulasi, kontrol suhu, transport rujukan.",
+    "next": "nk-end"
+  },
+  {
+    "id": "nk-end",
+    "moduleId": "nakes-basic",
+    "order": 99,
+    "type": "action",
+    "title": "Selesai",
+    "body": "Serah terima ke tim lanjutan.",
+    "next": null
+  }
+]

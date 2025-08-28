@@ -1,0 +1,9 @@
+[
+  {
+    "id": "nakes-basic",
+    "audience": "nakes",
+    "title": "Panduan RJP untuk Tenaga Kesehatan",
+    "description": "Alur NAKES: cek nadi & napas ≤10 detik, ventilasi, CPR 30:2, AED/defibrilasi, siklus 2 menit, evaluasi ROSC.",
+    "estimatedTimeMin": 12
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "id": "quiz-nakes-1",
+  "moduleId": "nakes-basic",
+  "title": "Kuis Dasar RJP (NAKES)",
+  "questions": [
+    {
+      "q": "Durasi maksimal cek napas & nadi simultan?",
+      "options": ["5 detik", "≤10 detik", "20 detik", "≤30 detik"],
+      "answerIdx": 1,
+      "explain": "Penilaian cepat agar tidak menunda CPR."
+    },
+    {
+      "q": "Rasio kompresi:ventilasi untuk dewasa (tanpa advanced airway)?",
+      "options": ["15:2", "30:2", "5:1", "kontinu tanpa ventilasi"],
+      "answerIdx": 1,
+      "explain": "Standar dewasa: 30 kompresi : 2 ventilasi."
+    },
+    {
+      "q": "Laju ventilasi bantu saat ada nadi tetapi tidak bernapas?",
+      "options": ["1/3 detik", "1/5 detik", "1/6 detik (~10/menit)", "1/10 detik"],
+      "answerIdx": 2,
+      "explain": "Sekitar 1 napas tiap 6 detik atau 10/menit."
+    },
+    {
+      "q": "Interval evaluasi/analisa ulang saat RJP berlangsung?",
+      "options": ["Setiap 30 detik", "Setiap 1 menit", "Setiap 2 menit", "Setiap 5 menit"],
+      "answerIdx": 2,
+      "explain": "Re-analisa ritme/evaluasi ROSC tiap 2 menit."
+    },
+    {
+      "q": "Tindakan setelah ROSC didapat?",
+      "options": ["Hentikan semua intervensi", "Perawatan pasca-ROSC", "Ulang CPR 2 menit", "Defibrilasi ulang"],
+      "answerIdx": 1,
+      "explain": "Stabilisasi airway, breathing, circulation, dan transport rujukan."
+    }
+  ]
+}

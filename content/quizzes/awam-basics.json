@@ -1,0 +1,37 @@
+{
+  "id": "quiz-awam-1",
+  "moduleId": "awam-basic",
+  "title": "Kuis Dasar RJP (Awam)",
+  "questions": [
+    {
+      "q": "Nomor layanan darurat di Indonesia?",
+      "options": ["110", "112", "911", "118"],
+      "answerIdx": 1,
+      "explain": "112 adalah nomor darurat nasional; 119 untuk layanan kesehatan."
+    },
+    {
+      "q": "Laju kompresi dada yang benar untuk dewasa?",
+      "options": ["60-80/menit", "80-100/menit", "100-120/menit", "≥140/menit"],
+      "answerIdx": 2,
+      "explain": "Target 100-120 kompresi per menit."
+    },
+    {
+      "q": "Kedalaman kompresi dewasa yang dianjurkan?",
+      "options": ["2-3 cm", "5-6 cm", "≥7 cm", "Tidak penting"],
+      "answerIdx": 1,
+      "explain": "Sekitar 5-6 cm dengan recoil penuh."
+    },
+    {
+      "q": "Langkah pertama saat korban tidak merespon?",
+      "options": ["Cari identitas", "Pindahkan segera", "Panggil bantuan & minta AED", "Ambil foto"],
+      "answerIdx": 2,
+      "explain": "Aktifkan bantuan darurat sedini mungkin."
+    },
+    {
+      "q": "Kapan menggunakan AED?",
+      "options": ["Hanya di rumah sakit", "Jika tersedia, secepatnya", "Tunggu tenaga medis", "Tidak untuk awam"],
+      "answerIdx": 1,
+      "explain": "Gunakan segera begitu tersedia, ikuti instruksi perangkat."
+    }
+  ]
+}

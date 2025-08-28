@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "minAppVersion": "1.0.0",
+  "updatedAt": "2025-08-28T00:00:00Z",
+  "baseUrl": "https://cdn.example.com/content/",
+  "locales": ["id"],
+  "modules": [
+    "modules/awam.json",
+    "modules/nakes.json"
+  ],
+  "steps": [
+    "steps/awam/steps.json",
+    "steps/nakes/steps.json"
+  ],
+  "quizzes": [
+    "quizzes/awam-basics.json",
+    "quizzes/nakes-basics.json"
+  ]
+}
